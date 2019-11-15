@@ -12,10 +12,10 @@ TABLE
 tbl_id      SongName        ArtistId(FK)    SongType    songPath
 -----------------------------------------------------------------------------------
 1	       Dholna	        3	            1	        1573725776623_Dholna - B Praak(DJJOhAL.Com).mp3
-2	       wang	        3	            2	        1573725836189_Wang Ft Sonam Bajwa - Ammy Virk(DJJOhAL.Com).mp3	
+2	       wang	            3	            2	        1573725836189_Wang Ft Sonam Bajwa - Ammy Virk(DJJOhAL.Com).mp3	
 4	       Teri Khaamiyan	5	            1	        1573726306407_Teri Khaamiyan - Akhil(DJJOhAL.Com).mp3	
 5	       sorry sorry	    4	            1	        1573726846856_Sorry Song - (Raag.Fm).mp3
-6	       Hook Up song	4	            2	        1573726897233_The Hook Up Song Remix - (Raag.Fm).mp3
+6	       Hook Up song	    4	            2	        1573726897233_The Hook Up Song Remix - (Raag.Fm).mp3
 7	       Tom and Jerry	4	            1	        1573726992469_Tom And Jerry - (Raag.Fm).mp3	
 8	       Pachtaoge	    6	            1	        1573727047047_Pachtaoge Jaani Ve - Arijit Singh(DJJOhAL.Com).mp3
 
