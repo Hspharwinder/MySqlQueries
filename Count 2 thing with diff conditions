@@ -9,7 +9,7 @@ WHERE
  
 TABLE
 =======
-tbl_id      SongName        ArtistId(FK)    SongType    songPath
+tbl_id      SongName            ArtistId(FK)    SongType    songPath
 -----------------------------------------------------------------------------------
 1	       Dholna	        3	            1	        1573725776623_Dholna - B Praak(DJJOhAL.Com).mp3
 2	       wang	            3	            2	        1573725836189_Wang Ft Sonam Bajwa - Ammy Virk(DJJOhAL.Com).mp3	
