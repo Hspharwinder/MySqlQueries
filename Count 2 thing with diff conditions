@@ -1,0 +1,7 @@
+SELECT 
+    SUM(IF(type=1, 1, 0)) AS mp3_count,
+    SUM(IF(type=2, 1, 0)) AS video_count
+FROM 
+    tblMedia 
+WHERE 
+ artistId=5
