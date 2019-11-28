@@ -1,0 +1,22 @@
+CREATE DEFINER=`a572016d_ShyamMusicUser`@`122.180.87.192` PROCEDURE `sp_LikingInsert`(
+	IN p_usersId INT(11), 
+    In p_mediaId INT(11), 
+    In p_like BIT(64)
+)
+BEGIN
+	IF EXISTS (SELECT * FROM tblUsers WHERE tblUsers_ID = p_userId) THEN
+		BEGIN
+			 IF EXISTS (SELECT * FROM tblMedia WHERE tblMedia_Id = p_mediaId) THEN
+				 BEGIN
+					INSERT INTO tblUserLiking (usersId, mediaId, liking) 
+					VALUES(p_usersId, p_mediaId, p_like);
+                    SELECT @@Identity;
+				 END;
+			 ELSE
+				 SELECT -2;
+			 END IF;
+		END;
+    ELSE
+		SELECT -1;
+	END IF;
+END
