@@ -1,0 +1,4 @@
+   SELECT tblMedia.*, (tblUsers.Name) as artitstName FROM tblUserWishlist
+		RIGHT JOIN tblMedia ON tblMedia.tblMedia_Id = tblUserWishlist.tblMedia_Id 
+		RIGHT JOIN tblUsers ON  tblUsers.tblUsers_ID = tblMedia.ArtistId
+	WHERE tblUserWishlist.tblUsers_ID = p_tblUsers_ID;
