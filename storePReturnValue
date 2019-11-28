@@ -1,0 +1,25 @@
+CREATE DEFINER=`a572016d_ShyamMusicUser`@`122.180.87.192` PROCEDURE `sp_LikingInsert`(
+	IN p_usersId INT(11), 
+    IN p_mediaId INT(11), 
+    IN p_like BIT(64),
+    OUT p_return INT
+)
+BEGIN
+	IF EXISTS (SELECT * FROM tblUsers WHERE tblUsers_ID = p_usersId) THEN
+		BEGIN
+			 IF EXISTS (SELECT * FROM tblMedia WHERE tblMedia_Id = p_mediaId) THEN
+				 BEGIN
+					INSERT INTO tblUserLiking (tblusers_Id, tblmedia_Id, liking) 
+					VALUES(p_usersId, p_mediaId, p_like);
+                    SET p_return = @@Identity; -- SELECT @@Identity;
+				 END;
+			 ELSE
+				 SET p_return = -2; -- SELECT -2;
+			 END IF;
+		END;
+    ELSE
+		SET p_return = -1; -- SELECT -1;
+	END IF;    
+    -- for accessing return value of storeP we need @. @ showing error in nodejs therefore we using this
+    SELECT @p_return AS p_return; 
+END
