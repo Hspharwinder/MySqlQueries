@@ -1,0 +1,5 @@
+This error appears because safe update mode requires key to update/delete with where clause, you can use
+
+SET SQL_SAFE_UPDATES=0;
+
+Before executing the query or if you want to avoid this situation in future please make sure update/delete by using key with where clause
