@@ -1,0 +1,8 @@
+DECLARE EXIT HANDLER FOR 1062
+    BEGIN
+     SELECT CONCAT('Email already exists') AS success, tblUsers_ID AS Id from tblUsers where Email = p_Email;
+    END;   
+    
+	INSERT INTO tblUsers(Name, Email, UserImage,UserType, Status,UserName)
+		VALUES (p_Name, p_Email, p_UserImage, p_UserType, p_Status,p_UserName);
+    SELECT CONCAT('Inserted ') AS success, @@Identity AS Id;
