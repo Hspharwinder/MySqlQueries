@@ -1,0 +1,44 @@
+tblMedia_Id ArtistId  Type   Name 
+-----------------------------------------
+80	          120	     2     kanhiya mittal
+64	          6	       1	   Dholna
+67	          6	       2	   sample
+68	          6	       2	   River video
+71	          6	       2	   For Bigger Blazes
+76	          6	       1	   rabbave
+82	          126	     1	   Song
+83	          123	     2	   parvinder palak
+84	          6	       1	   wang
+85	          141	     2	   shyam singar
+
+Note: video type-2 audio type-1
+
+1.) query
+SELECT 	
+    SUM(IF(type=1, 1, 0)) AS mp3_count,
+    SUM(IF(type=2, 1, 0)) AS video_count
+FROM 
+    tblMedia 
+    
+OUTPUT:
+==========
+mp3_count	  video_count
+------------------------------
+4		        6
+
+2.) query 
+SELECT * FROM 
+		(
+			SELECT count(type) AS noOfAudio from tblMedia
+			WHERE type=1
+		) AS AudioSong
+ JOIN (
+		SELECT count(type) AS noOfVideo FROM tblMedia 
+        WHERE type=2
+	  ) AS VideoSong;
+    
+OUTPUT:
+==========
+noOfAudio   noOfVideo
+------------------------------
+4		        6
