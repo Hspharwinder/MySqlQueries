@@ -1,0 +1,2 @@
+SET @row := 0;
+SELECT @row := @row + 1 AS OwnSequence, U.* FROM tblUsers AS U; 
