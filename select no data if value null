@@ -1,0 +1,1 @@
+SELECT *, IFNULL((tblUsers.UserImage),'No data found') AS UserImage FROM tblUsers
